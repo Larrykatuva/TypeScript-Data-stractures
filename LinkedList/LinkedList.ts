@@ -49,14 +49,14 @@ class LinkedList<T> {
 }
 
 
-const linkedList = new LinkedList<number>();
-linkedList.insertFirst(20);
-linkedList.insertFirst(34);
-linkedList.insertFirst(78)
-linkedList.insertFirst(12)
-linkedList.displayList()
-linkedList.deleteFirst()
-linkedList.insertFirst(200)
-linkedList.displayList()
-console.log('Is 204 found => ', linkedList.findLink(204))
-console.log('Is 20 found => ', linkedList.findLink(20))
+// const linkedList = new LinkedList<number>();
+// linkedList.insertFirst(20);
+// linkedList.insertFirst(34);
+// linkedList.insertFirst(78)
+// linkedList.insertFirst(12)
+// linkedList.displayList()
+// linkedList.deleteFirst()
+// linkedList.insertFirst(200)
+// linkedList.displayList()
+// console.log('Is 204 found => ', linkedList.findLink(204))
+// console.log('Is 20 found => ', linkedList.findLink(20))

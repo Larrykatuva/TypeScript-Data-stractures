@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.DoubleEndedLinkedList = void 0;
 var Link_1 = require("./Link");
 var DoubleEndedLinkedList = /** @class */ (function () {
     function DoubleEndedLinkedList() {
@@ -27,12 +28,14 @@ var DoubleEndedLinkedList = /** @class */ (function () {
         this.last = newLink;
     };
     DoubleEndedLinkedList.prototype.deleteFirst = function () {
+        var _a;
+        var temp = (_a = this.first) === null || _a === void 0 ? void 0 : _a.data;
         if (this.first) {
-            if (this.first.next == null) {
+            if (this.first.next == null)
                 this.last = null;
-            }
-            this.first.next = this.first;
+            this.first = this.first.next;
         }
+        return temp ? temp : null;
     };
     DoubleEndedLinkedList.prototype.displayList = function () {
         var result = '[ ';
@@ -47,13 +50,14 @@ var DoubleEndedLinkedList = /** @class */ (function () {
     };
     return DoubleEndedLinkedList;
 }());
-var linkedList = new DoubleEndedLinkedList();
-linkedList.insertFirst(20);
-linkedList.insertFirst(34);
-linkedList.insertFirst(78);
-linkedList.insertFirst(12);
-linkedList.displayList();
+exports.DoubleEndedLinkedList = DoubleEndedLinkedList;
+// const linkedList = new DoubleEndedLinkedList<number>();
+// linkedList.insertFirst(20);
+// linkedList.insertFirst(34);
+// linkedList.insertFirst(78)
+// linkedList.insertFirst(12)
+// linkedList.displayList()
 // linkedList.deleteFirst()
-linkedList.insertFirst(200);
-linkedList.insertLast(405);
-linkedList.displayList();
+// linkedList.insertFirst(200)
+// linkedList.insertLast(405)
+// linkedList.displayList()

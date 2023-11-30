@@ -1,7 +1,7 @@
 import {Link} from "./Link";
 
 
-class DoubleEndedLinkedList<T> {
+export class DoubleEndedLinkedList<T> {
     first: Link<T> | null | undefined;
     last: Link<T> | null | undefined;
 
@@ -31,13 +31,13 @@ class DoubleEndedLinkedList<T> {
         this.last = newLink
     }
 
-    deleteFirst(): void {
+    deleteFirst(): T | null {
+        const temp = this.first?.data
         if (this.first){
-            if (this.first.next == null){
-                this.last = null;
-            }
-            this.first.next = this.first;
+            if (this.first.next == null) this.last = null;
+            this.first = this.first.next;
         }
+        return temp? temp: null;
     }
 
     displayList(): void {
@@ -54,13 +54,13 @@ class DoubleEndedLinkedList<T> {
 }
 
 
-const linkedList = new DoubleEndedLinkedList<number>();
-linkedList.insertFirst(20);
-linkedList.insertFirst(34);
-linkedList.insertFirst(78)
-linkedList.insertFirst(12)
-linkedList.displayList()
+// const linkedList = new DoubleEndedLinkedList<number>();
+// linkedList.insertFirst(20);
+// linkedList.insertFirst(34);
+// linkedList.insertFirst(78)
+// linkedList.insertFirst(12)
+// linkedList.displayList()
 // linkedList.deleteFirst()
-linkedList.insertFirst(200)
-linkedList.insertLast(405)
-linkedList.displayList()
+// linkedList.insertFirst(200)
+// linkedList.insertLast(405)
+// linkedList.displayList()
